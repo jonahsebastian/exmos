@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>CSV Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>CSV File Upload</h1>
+        <p class="info">Upload a CSV file with columns: 'koi_period', 'koi_fpflag_nt', 'koi_fpflag_ss', and 'koi_fpflag_co'.</p>
+        <div class="form-group">
+            <label for="csv-file-input">Choose a CSV file</label>
+            <input type="file" id="csv-file-input" accept=".csv">
+        </div>
+        <div id="csv-results-container"></div>
+        <a href="/home" class="back-link">← Back to Home</a>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

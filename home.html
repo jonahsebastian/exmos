@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exoplanet Predictor & Habitable Zone Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🪐 Exoplanet Predictor</h1>
+        <h2>How would you like to analyze a candidate?</h2>
+        
+        <div class="choice-container">
+            <a href="{{ url_for('manual') }}" class="choice-btn manual">
+                Enter Parameters Manually
+            </a>
+            <a href="{{ url_for('csv') }}" class="choice-btn csv">
+                Upload a CSV File
+            </a>
+        </div>
+    </div>
+</body>
+</html>

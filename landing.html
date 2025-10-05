@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExoVerse - Explore Exoplanets</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Specific styles for the landing page */
+        body.landing-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .landing-content {
+            z-index: 10;
+            color: var(--text-light);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .landing-content h1 {
+            font-size: 5em;
+            margin-bottom: 20px;
+            color: white;
+            border-bottom: none;
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+            letter-spacing: 5px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .enter-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: popIn 1s ease-out 1.5s forwards;
+            opacity: 0;
+        }
+
+        .enter-button:hover {
+            background-color: #4A7BA3;
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="landing-page">
+    <div class="landing-content">
+        <h1>ExoVerse</h1>
+        <a href="{{ url_for('home') }}" class="enter-button">Enter ExoVerse</a>
+    </div>
+</body>
+</html>

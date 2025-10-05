@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual Input - Exoplanet Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Manual Data Entry</h1>
+        <p class="info">Enter the exoplanet parameters below</p>
+        <form id="manual-form">
+            <div class="form-group">
+                <label for="orbital_period">Orbital Period (days)</label>
+                <input type="number" id="orbital_period" value="19.5" step="any">
+                <input type="range" id="orbital_period_slider" min="0" max="1000" value="19.5" step="1">
+                <div class="range-labels"><span>0</span><span>1000</span></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="transit_depth">Transit Depth (ppm)</label>
+                <input type="number" id="transit_depth" value="500" step="any">
+                <input type="range" id="transit_depth_slider" min="0" max="50000" value="500" step="10">
+                <div class="range-labels"><span>0</span><span>50k ppm</span></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="planet_radius">Planet Radius (Earth radii)</label>
+                <input type="number" id="planet_radius" value="2.5" step="any">
+                <input type="range" id="planet_radius_slider" min="0" max="50" value="2.5" step="0.1">
+                <div class="range-labels"><span>0</span><span>50</span></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="stellar_temp">Stellar Effective Temperature (K)</label>
+                <input type="number" id="stellar_temp" value="5500" step="any">
+                <input type="range" id="stellar_temp_slider" min="2500" max="10000" value="5500" step="10">
+                <div class="range-labels"><span>2500 K</span><span>10000 K</span></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="stellar_mass">Stellar Mass (Solar masses)</label>
+                <input type="number" id="stellar_mass" value="1.0" step="any">
+                <input type="range" id="stellar_mass_slider" min="0.1" max="5" value="1.0" step="0.1">
+                <div class="range-labels"><span>0.1 M☉</span><span>5 M☉</span></div>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit">Analyze Candidate</button>
+            </div>
+        </form>
+        <div id="results-display"></div>
+        <a href="/home" class="back-link" style="display: none;">← Analyze Another</a>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
